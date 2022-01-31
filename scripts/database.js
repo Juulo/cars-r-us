@@ -1,4 +1,7 @@
 const database = {
+    orderBuilder: {
+
+    },
     paintColors: [
         {id: 1, color: "Silver"},
         {id: 2, color: "Midnight Blue"},
@@ -12,10 +15,10 @@ const database = {
         {id: 4, material: "Black Leather"}
     ],
     technologies: [
-        {id: 1, tech: "Basic Package"},
-        {id: 2, tech: "Navigation Package"},
-        {id: 3, tech: "Visibility Package"},
-        {id: 4, tech: "Ultra Package"}
+        {id: 1, package: "Basic Package"},
+        {id: 2, package: "Navigation Package"},
+        {id: 3, package: "Visibility Package"},
+        {id: 4, package: "Ultra Package"}
     ],
     wheels: [
         {id: 1, wheelSize: "17-inch Pair Radial"},
@@ -23,13 +26,15 @@ const database = {
         {id: 3, wheelSize: "18-inch Pair Spoke Silver"},
         {id: 4, wheelSize: "18-inch Pair Spoke Black"}
     ],
-    cars: {
-        id: 1,
-        paintColorId: 2,
-        interiorId: 3,
-        technologyId: 4,
-        wheelsId: 2
-    }
+    carOrder: [
+        {
+            id: 1,
+            paintColorId: 2,
+            interiorId: 3,
+            technologyId: 4,
+            wheelsId: 2
+        }
+    ]
 }
 
 export const getPaintColor = () => {
@@ -43,4 +48,20 @@ export const getTechnology = () => {
 }
 export const getWheels = () => {
     return database.wheels.map(wheel => ({...wheel}))
+}
+
+export const setPaintColor = (id) => {
+    database.orderBuilder.paintColorId = id
+}
+
+export const setInterior = (id) => {
+    database.orderBuilder.interiorId = id
+}
+
+export const setTechnology = (id) => {
+    database.orderBuilder.technologyId = id
+}
+
+export const setWheels = (id) => {
+    database.orderBuilder.wheelsId = id
 }
