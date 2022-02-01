@@ -6,7 +6,7 @@ document.addEventListener(
     "click",
     (event) => {
         if (event.target.id.startsWith("tech")) {
-            const [, techId] = event.target.value.split("--")
+            const techId = event.target.value
 
             for (const tech of techs) {
                 if (tech.id === parseInt(techId)) {
@@ -23,7 +23,7 @@ export const Technologies = () => {
     html += '<option value="0">Select a technology package</option>'
 
     for (const tech of techs) {
-        html += `<option value="tech--${tech.id}">${tech.package}</option>`
+        html += `<option value="${tech.id}">${tech.package}</option>`
     }
 
     html += "</select>"

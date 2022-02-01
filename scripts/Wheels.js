@@ -6,7 +6,7 @@ document.addEventListener(
     "click",
     (event) => {
         if (event.target.id.startsWith("wheel")) {
-            const [, wheelId] = event.target.value.split("--")
+            const wheelId = event.target.value
 
             for (const wheel of wheels) {
                 if (wheel.id === parseInt(wheelId)) {
@@ -24,7 +24,7 @@ export const Wheels = () => {
     html += `<option value="0">Select a wheel option</option>`
 
     for (const wheel of wheels) {
-        html += `<option value="wheel--${wheel.id}">${wheel.wheelSize}</option>`
+        html += `<option value="${wheel.id}">${wheel.wheelSize}</option>`
     }
     html += `</select>`
     return html

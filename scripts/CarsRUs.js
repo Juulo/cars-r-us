@@ -15,10 +15,11 @@ document.addEventListener(
 )
 
 export const CarsRUs = () => {
-    return `${Technologies()}
-    ${Paints()}
-    ${Wheels()}
+    return `
     ${Interiors()}
+    ${Wheels()}
+    ${Paints()}
+    ${Technologies()}
     <article>
     <button id="orderButton">Create Order</button>
     </article>

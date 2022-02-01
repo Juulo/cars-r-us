@@ -28,7 +28,10 @@ const buildOrderListItem = (order) => {
         }
     )
     // variable to be our sum of costs
-    const totalCarCost = foundInterior.price + foundPaintColor.price + foundTech.price + foundWheel.price
+    const totalCarCost = foundInterior.price + 
+    foundPaintColor.price + 
+    foundTech.price + 
+    foundWheel.price
     // To automatically format the number as currency
     const costString = totalCarCost.toLocaleString("en-US", {
         style: "currency",
